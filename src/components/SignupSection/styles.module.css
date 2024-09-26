@@ -1,0 +1,175 @@
+.signupSection {
+  background: linear-gradient(135deg, #007bff, #1f3f5b);
+  padding: 4rem 2rem;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: 4rem;
+}
+
+.signupContent {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem; /* Added padding to give some room on the sides */
+}
+
+.signupContent h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffdd40;
+}
+
+.signupContent p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #d1e7ff;
+}
+
+.signupForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem; /* Added gap between form elements for better spacing */
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.inputField {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  background-color: white;
+  color: black;
+  border-radius: 30px;
+  border: 1px solid #007bff;
+  font-size: 1rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.selectContainer {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 0.5rem;
+}
+
+.signupForm select {
+  width: 100%;
+  padding: 1rem;
+  background-color: white;
+  color: black;
+  border-radius: 30px;
+  border: 1px solid #007bff;
+  font-size: 1rem;
+  appearance: none;
+  cursor: pointer;
+  text-align: left;
+  padding-right: 2.5rem;
+  z-index: 1;
+}
+
+.signupForm select:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+/* Styling for the options in the dropdown */
+.signupForm option {
+  background-color: white;
+  color: black;
+  font-size: 1rem;
+  padding: 1rem; /* This may not work in all browsers */
+}
+
+.signupForm option:hover {
+  background-color: #f0f0f0; /* Lighter background on hover */
+  color: #007bff; /* Change text color on hover */
+}
+
+.signupForm option:focus {
+  background-color: #dceeff; /* Slightly blue background when focused */
+}
+
+
+
+.dropdownIcon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #007bff;
+  font-size: 1rem;
+  z-index: 0; /* Ensure the icon doesn't block interaction with select */
+}
+
+.submitButton {
+  margin: 0.5rem 0;
+  padding: 0.75rem 1.5rem;
+  background-color: #ff8800;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  max-width: 400px;
+}
+
+.submitButton:hover {
+  background-color: #ff6b00;
+}
+
+.errorMessage, .successMessage {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.errorMessage {
+  color: #ff4d4d;
+}
+
+.successMessage {
+  color: #28a745;
+}
+
+.privacyText {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .signupContent h2 {
+    font-size: 2rem;
+  }
+
+  .signupContent p {
+    font-size: 1.1rem;
+  }
+
+  .formGroup {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .inputField, .submitButton {
+    border-radius: 30px;
+    margin-bottom: 1rem;
+  }
+
+  .submitButton {
+    width: 100%;
+  }
+}

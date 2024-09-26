@@ -1,0 +1,86 @@
+/* Class Schedule Section */
+.scheduleSection {
+  background-image: url('/images/background_02.jpg'); /* Replace with your actual image path */
+  position: relative;
+  
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  border-radius: 15px; /* Optional: Add some rounded corners */
+  color: white; /* Adjust text color for contrast */
+  overflow: hidden; /* Ensure the overlay doesn't exceed the section */
+}
+
+.scheduleSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  z-index: 1; /* Ensure overlay is above the background image */
+}
+
+
+
+.scheduleSection h2 {
+  position: relative; /* Position relative to overlay */
+  z-index: 2; /* Ensure text is above the overlay */
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffb100;
+}
+
+.scheduleDescription {
+  position: relative; /* Position relative to overlay */
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  z-index: 2;
+  
+}
+
+/* src/app/ScheduleSection.module.css */
+.scheduleDetails {
+  display: inline-block;
+  position: relative; /* Position relative to overlay */
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  border-radius: 15px;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto; /* Center the block itself */
+  text-align: left; /* Align text to the left */
+  z-index: 2; /* 
+}
+
+.scheduleDetails p {
+  margin: 0.5rem 0; /* Adjusted spacing for paragraphs */
+}
+
+.scheduleDetails strong {
+  color: #ffb100; /* Keep the emphasis color */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .scheduleSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .scheduleSection h2 {
+    font-size: 2rem;
+  }
+
+  .scheduleDescription {
+    font-size: 1.1rem;
+  }
+
+  .scheduleDetails {
+    font-size: 1rem;
+    padding: 1.2rem;
+  }
+}

@@ -1,165 +1,255 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
+/* src/app/page.module.css */
+.container {
+  padding: 0 2rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+.header {
+  background: linear-gradient(135deg, #1f3f5b, #007bff);
+  padding: 2rem 2rem;  /* Adjust padding to have more space around the logo */
+  color: white;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  text-align: center;   /* Center all contents */
+}
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
+.logo {
+  width: 200px;           /* Set the desired width */
+  height: auto;          /* Maintain aspect ratio */
+  margin-bottom: 1rem;   /* Space below the logo */
+}
+
+.title {
+  font-size: 3.5rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: #d1e7ff;
+}
+
+.ctaButton {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  color: white;
+  background-color: #ff8800;
+  border-radius: 30px;
+  border: none;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #ff6b00;
 }
 
 .main {
+  padding: 4rem 0;
+}
+
+.featureSection {
+  padding: 4rem 0;
+  background-image: url('/images/background_01.png'); /* Replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border-radius: 20px;
+  margin-top: -2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+/* Overlay for readability */
+.featureSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.featureSection h2 {
+  color: #ffffff; /* White color for the heading */
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Cards will resize based on screen width */
+  gap: 2rem; /* Space between the cards */
+  padding: 0 2rem;
+}
+
+.featureItem {
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featureItem:hover {
+  transform: translateY(-10px); /* Moves the card slightly up on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Deepens the shadow on hover */
+}
+
+.featureItem h3 {
+  color: #007bff;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.featureItem p {
+  color: #555;
+  font-size: 1rem;
+}
+
+.testimonialsSection {
+  background-color: #f0f8ff; /* Light background color */
+  padding: 4rem 0;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.testimonialsTitle {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #007bff; /* Primary color for headings */
+}
+
+.testimonialsContainer {
   display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Makes it responsive */
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
+.testimonialCard {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex: 0 0 300px; /* Fixed width for cards */
 }
 
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
+.testimonialText {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #555; /* Slightly darker text for better readability */
 }
 
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
+.testimonialAuthor {
+  font-weight: bold;
+  color: #007bff; /* Use primary color for author names */
 }
 
-.ctas {
-  display: flex;
-  gap: 16px;
+.faqSection {
+  padding: 2rem 1rem; /* Reduced vertical padding */
+  background-color: #f5f5f5; /* Light background for contrast */
+  border-radius: 20px;
+  margin-top: 4rem;
 }
 
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
+.faqSection h2 {
+  font-size: 2rem;
+  color: #007bff; /* Color for the section title */
+  margin-bottom: 1rem; /* Reduced space below the section title */
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
+.faqItem {
+  margin-bottom: 1.5rem; /* Reduced space between questions */
+  padding: 0.75rem; /* Reduced padding for better compactness */
+  border: 1px solid transparent; /* Optional: Adds a subtle border */
+  transition: border-color 0.3s; /* Optional: Transition for hover effect */
 }
 
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 180px;
+.faqItem:hover {
+  border-color: #007bff; /* Optional: Highlight on hover */
 }
 
+.faqItem h3 {
+  font-size: 1.5rem;
+  color: #333; /* Darker color for questions */
+  cursor: pointer; /* Makes it look clickable */
+}
+
+.faqItem p {
+  margin-top: 0.25rem; /* Reduced margin above the answer */
+  font-size: 1rem;
+  color: #555; /* Gray color for answers */
+}
+
+
+
+
+
+/* Footer Styles */
 .footer {
-  grid-row-start: 3;
-  display: flex;
-  gap: 24px;
+  padding: 2rem 0;
+  text-align: center;
+  background-color: #1f3f5b;
+  color: white;
 }
 
-.footer a {
+.footerContent {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 2rem; /* Space between the text and the link */
+  flex-wrap: wrap;
 }
 
-.footer img {
-  flex-shrink: 0;
+.footerLink {
+  color: #ff8800;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
+.footerLink:hover {
+  color: #ff6b00;
 }
 
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+  .header {
+    padding: 3rem 1rem;
   }
 
-  .main {
-    align-items: center;
+  .title {
+    font-size: 2.5rem;
   }
 
-  .main ol {
-    text-align: center;
+  .description {
+    font-size: 1.2rem;
   }
 
-  .ctas {
+  .ctaButton {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .features {
     flex-direction: column;
   }
 
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
-  }
-
-  a.secondary {
-    min-width: auto;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+  .featureItem {
+    margin: 1rem 0;
   }
 }
