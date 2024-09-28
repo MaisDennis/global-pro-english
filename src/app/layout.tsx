@@ -1,4 +1,5 @@
 // src/app/layout.tsx
+import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 import { Poppins } from 'next/font/google';
 import React from 'react';
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <ReCaptchaScriptLoader />
         {children}
+        <Analytics />
       </body>
     </html>
   );
